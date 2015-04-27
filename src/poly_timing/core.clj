@@ -63,12 +63,12 @@
   (println "\n## Type-based dispatch")
   (bench "multi" (type-multi "abc"))
   (bench "multi default" (type-multi 1/2))
-  (bench "poly" (type-proto "abc"))
-  (bench "poly default" (type-proto 1/2))
+  (bench "proto" (type-proto "abc"))
+  (bench "proto default" (type-proto 1/2))
 
   (println "\n## Bimorphic distribution")
   (bench "multi bi" (do (type-multi "abc") (type-multi 5)))
-  (bench "poly bi" (do (type-proto "abc") (type-proto 5)))
+  (bench "proto bi" (do (type-proto "abc") (type-proto 5)))
   )
 
 
