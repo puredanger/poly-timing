@@ -16,29 +16,25 @@ Minimal library to benchmark performance of value and type based dispatch.
 
 Clojure 1.8, Java 1.8, 2013-era Macbook Pro
 
-### Value-based dispatch
+Value-based dispatch
 
-case 1st : 5.40 ns
-case 5th : 18.0 ns
+* case 1st : 5.40 ns
+* case 5th : 18.0 ns
+* cond 1st : 4.89 ns
+* cond 5th : 35.6 ns
+* multi 1st : 40.2 ns
+* multi 5th : 40.8 ns
+* match 1st : 4.83 ns
+* match 5th : 20.6 ns
 
-cond 1st : 4.89 ns
-cond 5th : 35.6 ns
+Type-based dispatch
 
-multi 1st : 40.2 ns
-multi 5th : 40.8 ns
+* multi : 41.0 ns
+* multi default : 43.9 ns
+* proto : 6.27 ns
+* proto default : 7.80 ns
 
-match 1st : 4.83 ns
-match 5th : 20.6 ns
+Bimorphic distribution
 
-### Type-based dispatch
-
-multi : 41.0 ns
-multi default : 43.9 ns
-
-proto : 6.27 ns
-proto default : 7.80 ns
-
-### Bimorphic distribution
-
-multi bi : 78.3 ns
-proto bi : 22.7 ns
+* multi bi : 78.3 ns
+* proto bi : 22.7 ns
