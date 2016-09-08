@@ -2,6 +2,8 @@
 
 Minimal library to benchmark performance of value and type based dispatch.
 
+Also see: http://insideclojure.org/2015/04/27/poly-perf/
+
 ## Tests
 
 * Value-based dispatch - tests dispatching by value to both the first and fifth case based on case, cond, multimethods, and core.match. Multimethods do a linear search through the cases for the best match, so you will see that timings are about the same regardless. Other examples will bail out on the first match, so have faster first match timings.
