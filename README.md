@@ -16,27 +16,21 @@ Also see: http://insideclojure.org/2015/04/27/poly-perf/
 
 ## Example timings
 
-Clojure 1.8, Java 1.8, 2013-era Macbook Pro
+Clojure 1.10.1, OpenJDK Java 12, 2018-era Macbook Pro
 
 Value-based dispatch
 
-* case 1st : 5.40 ns
-* case 5th : 18.0 ns
-* cond 1st : 4.89 ns
-* cond 5th : 35.6 ns
-* multi 1st : 40.2 ns
-* multi 5th : 40.8 ns
-* match 1st : 4.83 ns
-* match 5th : 20.6 ns
+|          | case   | cond    | multimethod | core.match |
+| 1st case | 2.4 ns | 2.6 ns  | 35.3 ns     | 2.6 ns     |
+| 5th case | 2.6 ns | 15.5 ns | 36.1 ns     | 6.8 ns     |
 
 Type-based dispatch
 
-* multi : 41.0 ns
-* multi default : 43.9 ns
-* proto : 6.27 ns
-* proto default : 7.80 ns
+|              | multimethod | protocol |
+| match case   | 35.3 ns     | 3.65 ns  |
+| default case | 35.4 ns     | 4.49 ns  |
 
 Bimorphic distribution
 
-* multi bi : 78.3 ns
-* proto bi : 22.7 ns
+* multi bi : 67.1 ns
+* proto bi : 20.3 ns
