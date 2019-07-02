@@ -31,8 +31,4 @@ Type-based dispatch
 | ------------ | ----------- | -------- |
 | match case   | 35.3 ns     | 3.65 ns  |
 | default case | 35.4 ns     | 4.49 ns  |
-
-Bimorphic distribution
-
-* multi bi : 67.1 ns
-* proto bi : 20.3 ns
+| bimorphic    | 67.1 ns     | 20.3 ns  |
