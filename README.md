@@ -21,12 +21,14 @@ Clojure 1.10.1, OpenJDK Java 12, 2018-era Macbook Pro
 Value-based dispatch
 
 |          | case   | cond    | multimethod | core.match |
+| -------- | ------ | ------- | ----------- | ---------- |
 | 1st case | 2.4 ns | 2.6 ns  | 35.3 ns     | 2.6 ns     |
 | 5th case | 2.6 ns | 15.5 ns | 36.1 ns     | 6.8 ns     |
 
 Type-based dispatch
 
 |              | multimethod | protocol |
+| ------------ | ----------- | -------- |
 | match case   | 35.3 ns     | 3.65 ns  |
 | default case | 35.4 ns     | 4.49 ns  |
 
