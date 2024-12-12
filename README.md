@@ -16,19 +16,19 @@ Also see: http://insideclojure.org/2015/04/27/poly-perf/
 
 ## Example timings
 
-Clojure 1.11.1, Temurin Java 17.0.3, 2020-era Macbook Pro (Intel)
+Clojure 1.12.0, Temurin Java 21.0.3, 2023-era Macbook Pro (M3 Max)
 
 Value-based dispatch
 
 |          | case   | cond    | multimethod | core.match |
 | -------- | ------ | ------- | ----------- | ---------- |
-| 1st case | 2.6 ns | 2.3 ns  | 35.8 ns     | 2.4 ns     |
-| 5th case | 2.3 ns | 16.1 ns | 35.6 ns     | 18.9 ns     |
+| 1st case | 3.7 ns | 1.3 ns  | 8.9 ns     | 1.3 ns     |
+| 5th case | 4.6 ns | 17.6 ns | 9.5 ns     | 21.3 ns     |
 
 Type-based dispatch
 
 |              | multimethod | protocol |
 | ------------ | ----------- | -------- |
-| match case   | 37.0 ns     | 3.5 ns  |
-| default case | 35.2 ns     | 3.9 ns  |
-| bimorphic    | 68.0 ns     | 14.4 ns  |
+| match case   | 9.0 ns     | 2.5 ns  |
+| default case | 8.8 ns     | 2.9 ns  |
+| bimorphic    | 17.0 ns     | 9.3 ns  |
